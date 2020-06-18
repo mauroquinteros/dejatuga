@@ -12,13 +12,15 @@
   </head>
   <body>
     <div class="container">
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
       <div class="logo"><h3>DejaTu.Ga</h3></div>
-      <form class="form" method="">
+      <form class="form" method="POST">
         <p class="font">
           Más de 1 000 000 de personas han dejado su GAAA!!! ¿Que esperas para
           dejar el tuyo?
         </p>
-        <input class="input" id="txt" type="text" placeholder="Deja tu ga..." />
+        <input class="input" id="txt" type="text" name="counter" placeholder="Deja tu ga..." />
         <button class="button" onclick="">Enviar</button>
       </form>
       <div class="pdf">
@@ -26,18 +28,7 @@
         <button class="button" onclick="ga()">Descarga tu certifiga</button>
       </div>
     </div>
-    <script>
-      function ga() {
-        let doc = new jsPDF();
-        var img = new Image();
-        img.src = "img/ga.jpg";
-        console.log(img);
-        doc.setFontSize(40);
-        doc.text(40, 20, "Gracias por dejar tu ga");
-        doc.addImage(img, "jpg", 10, 40, 180, 180);
-        doc.save("CertifiGa.pdf");
-      }
-    </script>
+    <script src="js/app.js"></script>
     <script src="dist/jspdf.min.js"></script>
   </body>
 </html>
