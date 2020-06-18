@@ -10,17 +10,24 @@ function ga() {
 }
 
 const $form = document.querySelector('.form')
+const $counter = document.querySelector('#counter')
+
 $form.addEventListener('submit', (ev) => {
   ev.preventDefault()
   const formData = new FormData($form)
   $form.reset()
+  const data = {cuenta: formData.get('counter')}
+
   fetch('https://dejatuga.herokuapp.com/api/v1/counter/cuenta', {
     method: 'POST',
-    body: JSON.stringify(formData),
+    body: JSON.stringify(data),
     headers: {
       'Content-Type': 'application/json'
     }
   })
   .then(r => r.json())
-  .then(data => console.log('data',data));
+  .then(data => {
+    console.log('data',data)
+    $counter.innerHTML = data.data
+  });
 });
