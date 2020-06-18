@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap"
+      rel="stylesheet"
+    />
+    <title>Dejatu.ga</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo"><h3>DejaTu.Ga</h3></div>
+      <form class="form" method="">
+        <p class="font">
+          Más de 1 000 000 de personas han dejado su GAAA!!! ¿Que esperas para
+          dejar el tuyo?
+        </p>
+        <input class="input" id="txt" type="text" placeholder="Deja tu ga..." />
+        <button class="button" onclick="">Enviar</button>
+      </form>
+      <div class="pdf">
+        <img src="img/certifiga.png" alt="" />
+        <button class="button" onclick="ga()">Descarga tu certifiga</button>
+      </div>
+    </div>
+    <script>
+      function ga() {
+        let doc = new jsPDF();
+        var img = new Image();
+        img.src = "img/ga.jpg";
+        console.log(img);
+        doc.setFontSize(40);
+        doc.text(40, 20, "Gracias por dejar tu ga");
+        doc.addImage(img, "jpg", 10, 40, 180, 180);
+        doc.save("CertifiGa.pdf");
+      }
+    </script>
+    <script src="dist/jspdf.min.js"></script>
+  </body>
+</html>
