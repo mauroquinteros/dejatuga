@@ -169,7 +169,10 @@ img {
     gap: 1.5em;
     margin-bottom: 5rem;
   }
-  .description-text, .counter h2 {
+  .counter h2 {
+    font-size: 1.3rem;
+  }
+  .description-text {
     font-size: 1.1rem;
   }
   .u-button {
