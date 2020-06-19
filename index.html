@@ -1,34 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <title>Dejatu.ga</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="grid-item"></div>
-      <div class="grid-item"></div>
-      <div class="logo"><h3>DejaTu.Ga</h3></div>
-      <form class="form" method="POST">
-        <p class="font">
-          Más de 1 000 000 de personas han dejado su GAAA!!! ¿Que esperas para
-          dejar el tuyo?
-        </p>
-        <input class="input" id="txt" type="text" name="counter" placeholder="Deja tu ga..." />
-        <button class="button" onclick="">Enviar</button>
-      </form>
-      <div class="pdf">
-        <img src="img/certifiga.png" alt="" />
-        <button class="button" onclick="ga()">Descarga tu certifiga</button>
+    <section class="counter">
+      <h2>
+        Ya somos <span id="counter">152558</span> GAA!
+      </h2>
+    </section>
+    <main class="main">
+      <div class="container">
+        <div class="grid-item">
+          <section class="description">
+            <h1 class="description-logo">Dejatu.Ga</h1>
+            <p class="description-text">
+              Más de 1 000 000 de personas han dejado su GAA! ¿Que esperas para
+              dejar el tuyo?
+            </p>
+          </section>
+          <form class="form" method="POST">
+            <input class="form-input" type="text" name="counter" placeholder="Envia tu ga" />
+            <button class="u-button">Enviar</button>
+          </form>
+        </div>
+        <div class="grid-item">
+          <figure class="generator-image">
+            <img src="img/certifiga.png" alt="image pdf"/>
+          </figure>
+          <button class="u-button" onclick="ga()">
+            Descarga tu <span>certifiga</span>
+          </button>
+        </div>
       </div>
-      <p id="counter">Data: </p>
-    </div>
+    </main>
+    <footer class="footer">
+      <p>&copy; Copyright 2020. All rights reserved.</p>
+      <p>
+        Developed by
+        <a target="_blank" href="https://codergods.pro/">codergods</a>
+      </p>
+    </footer>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/app.js"></script>
     <script src="dist/jspdf.min.js"></script>
   </body>

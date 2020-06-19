@@ -1,3 +1,12 @@
+const $form = document.querySelector('.form')
+const $counter = document.querySelector('#counter')
+
+fetch('https://dejatuga.herokuapp.com/api/v1/gaa')
+.then( response => response.json())
+.then( ({data}) => {
+  $counter.textContent = data
+})
+
 function ga() {
   let doc = new jsPDF();
   var img = new Image();
@@ -8,9 +17,6 @@ function ga() {
   doc.addImage(img, "jpg", 10, 40, 180, 180);
   doc.save("CertifiGa.pdf");
 }
-
-const $form = document.querySelector('.form')
-const $counter = document.querySelector('#counter')
 
 $form.addEventListener('submit', (ev) => {
   ev.preventDefault()
@@ -26,8 +32,8 @@ $form.addEventListener('submit', (ev) => {
     }
   })
   .then(r => r.json())
-  .then(data => {
+  .then(({data}) => {
     console.log('data',data)
-    $counter.innerHTML = data.data
+    swal("Buen Trabajo!", "Gracias por contribuir con tu GAA!", "success");
   });
 });

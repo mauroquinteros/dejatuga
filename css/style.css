@@ -1,45 +1,63 @@
+:root {
+  --background-clr: #2d3a71;
+  --light-clr: rgb(245, 245, 245);
+  --secondary-clr: #3e8e41;
+  --ft-size: 16px;
+  --ft-family: "Roboto Mono", monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 body {
-  background-color: #2d3a71;
-  width: max-content;
-  height: max-content;
-  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
   margin: 0;
-  font-family: "Sriracha";
+  padding: 0;
+  background-color: #2d3a71;
+  font-family: var(--ft-family);
+  font-size: var(--ft-size);
+  color: var(--light-clr);
 }
 
 .container {
   max-width: 75rem;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  padding: 0 1rem;
+  grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) );
 }
 .grid-item {
-  border: 1px solid red;
-}
-/* Logo */
-.logo {
-  position: absolute;
-  top: 10px;
-  left: 80px;
+  text-align: center;
 }
 
-.logo h3 {
-  color: whitesmoke;
-  font-size: 38px;
+/* --- Description --- */
+.description {
+  border: 1px solid white;
+}
+.description-logo {
+  font-size: 2.5rem;
+}
+.description-text {
+  font-size: 2rem;
 }
 
-/* Formulario */
-
+/* --- Form --- */
 .form {
+
+}
+
+/* .form {
   position: absolute;
   width: 400px;
   height: 400px;
   top: 170px;
   left: 80px;
-  /* background-color: aquamarine; */
-}
+} */
 
-.form p {
+/* .form p {
   color: whitesmoke;
   font-size: 28px;
   text-align: justify;
@@ -51,9 +69,9 @@ body {
   font-size: 18px;
   position: absolute;
   left: 50px;
-}
+} */
 
-.form button.button {
+/* .form button.button {
   position: absolute;
   padding: 10px 20px;
   font-size: 24px;
@@ -67,7 +85,7 @@ body {
   border-radius: 15px;
   top: 270px;
   left: 125px;
-}
+} */
 
 .button:hover {
   background-color: #3e8e41;
@@ -79,7 +97,7 @@ body {
   transform: translateY(4px);
 }
 
-.pdf {
+/* .pdf {
   position: absolute;
   width: 400px;
   height: 600px;
@@ -87,10 +105,9 @@ body {
   margin-right: auto;
   top: 20px;
   left: 800px;
-  /* background-color: aquamarine; */
-}
+} */
 
-.pdf img {
+/* .pdf img {
   width: 400px;
   height: 400px;
 }
@@ -109,8 +126,8 @@ body {
   border-radius: 15px;
   top: 420px;
   left: 70px;
-}
-
+} */
+/* 
 @media (max-width: 414px) {
   .pdf {
     position: absolute;
@@ -167,4 +184,4 @@ body {
     top: 270px;
     left: 130px;
   }
-}
+} */
